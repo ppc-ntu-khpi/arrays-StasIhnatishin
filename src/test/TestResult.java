@@ -1,12 +1,24 @@
 package test;
 
-import domain.Exercise;
+import domain.Exercies;
+import java.util.Scanner;
 
 public class TestResult {
 
     public static void main(String[] args) {
 
-        int R=10;
-        System.out.println("Area of a circle for R="+R+"m is "+Exercise.Calculate(R)+"m"+'\u00B2');
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введіть число для перевірки: ");
+        int number = scanner.nextInt();
+
+        boolean isArmstrong = Exercies.Calculate(number);
+
+        if (isArmstrong) {
+            System.out.println(number + " є числом Армстронга.");
+        } else {
+            System.out.println(number + " не є числом Армстронга.");
+        }
+        
+        scanner.close();
     }
 }
